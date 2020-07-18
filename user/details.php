@@ -1,6 +1,6 @@
     <?php
     $idl = $_GET['id_loker'];
-    $detail = mysqli_query($koneksi, "SELECT * FROM perusahaan,event,loker WHERE loker.id_perusahaan=perusahaan.id_perusahaan AND loker.id_event=loker.id_event AND loker.id_loker='$idl'");
+    $detail = mysqli_query($koneksi, "SELECT * FROM perusahaan,event,loker WHERE loker.id_perusahaan=perusahaan.id_perusahaan AND loker.id_event=loker.id_event AND loker.id_loker='$idl' ORDER BY loker.tgl_tutup DESC ");
     if ($de = mysqli_fetch_array($detail)) {
     ?>
 
@@ -47,12 +47,16 @@
                             $limit = mysqli_query($koneksi, "SELECT * FROM lamaran,loker,user,event WHERE lamaran.id_user=user.id_user AND lamaran.id_loker=loker.id_loker AND loker.id_event=event.id_event AND lamaran.id_user='$id' AND loker.id_event='$de[id_event]' AND event.active='1'");
                             $lamaran = mysqli_query($koneksi, "SELECT * FROM lamaran,loker,user,event WHERE lamaran.id_user=user.id_user AND lamaran.id_loker=loker.id_loker AND loker.id_event=event.id_event AND lamaran.id_user='$id' AND lamaran.id_loker='$_GET[id_loker]'");
                             $expired = mysqli_query($koneksi, "SELECT * FROM perusahaan,loker,event WHERE perusahaan.id_perusahaan=loker.id_perusahaan AND loker.id_event=event.id_event AND event.active='0' AND loker.id_event='$de[id_event]'");
+                            $kouta=mysqli_query($koneksi,"SELECT*FROM loker WHERE id_loker='$_GET[id_loker]'");
+                            $kou=(mysqli_fetch_array($kouta));
                             if (mysqli_num_rows($lamaran)) {
                                 echo '<h4 class="btn btn-primary">Anda Telah Melamar</h4>';
                             } elseif (mysqli_num_rows($limit) >= 2) {
                                 echo '<h4 class="btn btn-primary">Batas 2 Loker Per Event</h4>';
                             } elseif (mysqli_num_rows($expired)) {
-                                echo '<h4 class="btn btn-primary">Loker Ditutup</h4>';
+                                echo '<h4 class="btn btn-danger">Loker Ditutup</h4>';
+                            }elseif ($kou['kouta']=='0') {
+                                echo '<h4 class="btn btn-danger">Kouta Pelamar Telah Habis</h4>';
                             } else {
                                 include "upload.php";
                             }

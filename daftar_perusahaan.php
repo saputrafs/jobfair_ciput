@@ -51,8 +51,11 @@
         <span class="glyphicon glyphicon-user form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="text" class="form-control" placeholder="Kota" name="kota">
-        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+      <label>Kota</label>
+      <select name="kota" class="form-control" title="KOTA">
+                      <option value="KUDUS">KUDUS</option>
+                      <option value="PATI">PATI</option>
+                    </select>
       </div>
       <div class="form-group has-feedback">
         <input type="text" class="form-control" placeholder="Alamat" name="alamat">

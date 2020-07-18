@@ -41,7 +41,7 @@
       <form action="reg_act.php" method="post">
         <div class="form-group has-feedback">
           <input type="text" class="form-control" placeholder="NIK" name="nik">
-          <span class="glyphicon glyphicon-user form-control-feedback"></span>
+          <span class="fa fa-barcode form-control-feedback"></span>
         </div>
         <div class="form-group has-feedback">
           <input type="hidden" class="form-control" placeholder="Full name" name="id_user" required>
@@ -54,6 +54,10 @@
             <option>Laki-Laki</option>
             <option>Perempuan</option>
           </select>
+        </div>
+        <div class="form-group has-feedback">
+          <input type="text" class="form-control" placeholder="No HP" name="no_hp" required>
+          <span class="fa fa-gear  form-control-feedback"></span>
         </div>
         <div class="form-group has-feedback">
           <input type="email" class="form-control" placeholder="Email" name="email" required>

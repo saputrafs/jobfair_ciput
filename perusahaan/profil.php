@@ -77,12 +77,8 @@
                   <div class="col-sm-10">
                     <select name="kota" class="form-control">
                       <option value="<?= $pr['kota'] ?>"><?= $pr['kota'] ?></option>
-                      <?php
-                      $pro = mysqli_query($koneksi, "SELECT * FROM prov ORDER BY pro ASC");
-                      while ($p = mysqli_fetch_array($pro)) {
-                      ?>
-                        <option value="<?= $p['pro'] ?>"><?= $p['pro'] ?></option>
-                      <?php } ?>
+                      <option value="KUDUS">KUDUS</option>
+                      <option value="PATI">PATI</option>
                     </select>
                   </div>
                 </div>

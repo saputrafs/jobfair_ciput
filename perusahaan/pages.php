@@ -21,6 +21,12 @@ else if ($_GET['page'] == "edd") {
 }
 else if ($_GET['page'] == "pelamar") {
     include "pelamar.php";
+}else if ($_GET['page'] == "pelamar_terima") {
+    include "pelamar_terima.php";
+}else if ($_GET['page'] == "pelamar_tolak") {
+    include "pelamar_tolak.php";
+}else if ($_GET['page'] == "pelamar_setuju") {
+    include "pelamar_setuju.php";
 }
 else if ($_GET['page'] == "profil") {
     include "profil.php";

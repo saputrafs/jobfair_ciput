@@ -116,12 +116,8 @@
                                     <div class="single_field">
                                         <select class="wide" id="lokasi" onchange="searchFilter();">
                                             <option data-display="Lokasi" value="">Location</option>
-                                            <?php
-                                            $lokasi = mysqli_query($koneksi, "SELECT * FROM perusahaan");
-                                            while ($lok = mysqli_fetch_array($lokasi)) {
-                                            ?>
-                                                <option value="<?= $lok['kota'] ?>"><?= $lok['kota'] ?></option>
-                                            <?php } ?>
+                                                <option value="KUDUS">KUDUS</option>
+                                                <option value="PATI">PATI</option>
                                         </select>
                                     </div>
                                 </div>

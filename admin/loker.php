@@ -19,7 +19,7 @@
     <tbody>
       <?php
       $no = 0;
-      $loker = mysqli_query($koneksi, "SELECT * FROM loker,event WHERE loker.id_event=event.id_event");
+      $loker = mysqli_query($koneksi, "SELECT * FROM loker,event WHERE loker.id_event=event.id_event ORDER BY loker.id_loker DESC");
       while ($lok = mysqli_fetch_array($loker)) {
         $no++;
       ?>

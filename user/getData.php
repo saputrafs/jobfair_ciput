@@ -65,7 +65,7 @@ if (isset($_POST['page'])) {
                             <div class="jobs_right">
                                 <div class="apply_now">
                                     <!-- <a class="heart_mark" href="#"> <i class="ti-heart"></i> </a> -->
-                                    <a href="index.php?page=details&id_perusahaan=<?= $row['id_loker'] ?>" class="boxed-btn3">Lihat</a>
+                                    <a href="index.php?page=details&id_loker=<?= $row['id_loker'] ?>" class="boxed-btn3">Lihat</a>
                                 </div>
                                 <div class="date">
                                     <p>Sampai Tanggal: <?= date("d-m-Y", strtotime($row['tgl_tutup'])); ?></p>

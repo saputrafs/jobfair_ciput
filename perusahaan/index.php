@@ -143,8 +143,9 @@ $id = $_SESSION['perusahaan'];
         <li class="header">MAIN NAVIGATION</li>
         <li><a href="index.php?page=home"><i class="fa fa-book"></i> <span>Beranda</span></a></li>
         <li><a href="index.php?page=loker"><i class="fa fa-book"></i> <span>Loker</span></a></li>
-        <!-- <li><a href="index.php?page=terima"><i class="fa fa-book"></i> <span>Pelamar Diterima</span></a></li>
-        <li><a href="index.php?page=tolak"><i class="fa fa-book"></i> <span>Pelamar Ditolak</span></a></li> -->
+        <li><a href="index.php?page=pelamar_terima"><i class="fa fa-book"></i> <span>Pelamar Diterima</span></a></li>
+        <li><a href="index.php?page=pelamar_tolak"><i class="fa fa-book"></i> <span>Pelamar Ditolak</span></a></li>
+        <li><a href="index.php?page=pelamar_setuju"><i class="fa fa-book"></i> <span>Pelamar Setuju</span></a></li>
       </ul>
       </section>
       <!-- /.sidebar -->
