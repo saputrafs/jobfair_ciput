@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 13, 2020 at 02:27 AM
+-- Generation Time: Jul 19, 2020 at 09:07 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.10
 
@@ -61,7 +61,7 @@ CREATE TABLE `event` (
 --
 
 INSERT INTO `event` (`id_event`, `nama_event`, `mulai`, `selesai`, `active`) VALUES
-(1, 'Jofair umum', '2020-06-08', '2021-08-25', 1),
+(1, 'Jofair umum', '2020-06-08', '2020-08-25', 1),
 (2, 'h3h3 job', '2020-06-16', '2020-06-17', 0),
 (3, 'kiwil', '2020-06-15', '2020-06-17', 0);
 
@@ -76,6 +76,9 @@ CREATE TABLE `lamaran` (
   `id_loker` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
   `cv` varchar(100) NOT NULL,
+  `ktp` varchar(100) NOT NULL,
+  `ijazah` varchar(100) NOT NULL,
+  `sertifikat` varchar(100) NOT NULL,
   `hasil` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -83,10 +86,9 @@ CREATE TABLE `lamaran` (
 -- Dumping data for table `lamaran`
 --
 
-INSERT INTO `lamaran` (`id_lamaran`, `id_loker`, `id_user`, `cv`, `hasil`) VALUES
-(9, 17, 2, '1.docx', ''),
-(11, 18, 2, '45-53.png', ''),
-(13, 21, 2, 'as.pdf', 'terima');
+INSERT INTO `lamaran` (`id_lamaran`, `id_loker`, `id_user`, `cv`, `ktp`, `ijazah`, `sertifikat`, `hasil`) VALUES
+(15, 17, 2, '580b585b2edbce24c47b2481.png', '1008465_132060743666119_1583397240_o.jpg', '76321.jpg', '_1_.jpg', 'tolak'),
+(16, 17, 3, '84-847632_wheat-vector-black-and-white-wheat-stalk-clipart.png.jpg', '6058239553_31aabce05e_b.jpg', '100.PNG', '76321.jpg', '');
 
 -- --------------------------------------------------------
 
@@ -111,7 +113,7 @@ CREATE TABLE `loker` (
 --
 
 INSERT INTO `loker` (`id_loker`, `id_perusahaan`, `id_event`, `nama_pekerjaan`, `jenis`, `persyaratan`, `tgl_buka`, `tgl_tutup`, `kouta`) VALUES
-(17, 1, 1, 'Ngamen', 'fulltime', '<p>Diskripsi Pekerjaan dan persyaratan</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Diskripsi Pekerjaan dan persyaratan</p>\r\n\r\n<p>Diskripsi Pekerjaan dan persyaratan</p>\r\n', '2020-06-03', '2020-06-08', 1000),
+(17, 1, 1, 'Ngamen', 'fulltime', '<p>Diskripsi Pekerjaan dan persyaratan</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Diskripsi Pekerjaan dan persyaratan</p>\r\n\r\n<p>Diskripsi Pekerjaan dan persyaratan</p>\r\n', '2020-06-03', '2020-06-08', 1),
 (18, 2, 1, 'Desainer', 'fulltime', '<p>yang penting bisa desain menguasai corel, photoshop, after effect</p>\r\n', '2020-06-10', '2020-06-13', 21),
 (19, 1, 1, 'Teknisi', 'parttime', '<p>Diskripsi Pekerjaan dan persyaratan</p>\r\n\r\n<p>Diskripsi Pekerjaan dan persyaratanDiskripsi Pekerjaan dan persyaratan</p>\r\n\r\n<p>Diskripsi Pekerjaan dan persyaratan</p>\r\n', '2020-06-10', '2020-06-13', 1),
 (20, 3, 2, 'Macul', 'parttime', '<p>apa saja yg penting bisa macul tanah</p>\r\n', '2020-06-15', '2020-06-17', 1000),
@@ -141,60 +143,9 @@ CREATE TABLE `perusahaan` (
 --
 
 INSERT INTO `perusahaan` (`id_perusahaan`, `npwp`, `nama_p`, `no_telp`, `alamat`, `kota`, `ket`, `logo`, `email`, `password`) VALUES
-(1, '2016531031', 'CV JAYA ABADIq', '12345654321', 'Mana aja boleh', 'ACEH', 'Siapa saja yang penting manusia', 'disnaker.png', 'a@gmail.com', 'a'),
+(1, '2016531031', 'CV JAYA ABADIq', '12345654321', 'Mana aja boleh', 'KUDUS', 'Siapa saja yang penting manusia', 'disnaker.png', 'a@gmail.com', 'a'),
 (2, '124387205761', 'BURHAN NUDIN', '0816253728', 'Kudus Jl Pramuka No 10', 'JAWA TENGAH', 'Ruko Biru Hadap Selatan', 'car.jpg', 'saputrafirdaus35@yahoo.co.id', 's'),
 (3, '123456789', 'CV LEMPOK', '08232675930', 'Dirumah aja', 'JAWA TENGAH', 'Belum ada', '_1_.jpg', 'saputrafirdaus35@yahoo.co.id', 'a');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `prov`
---
-
-CREATE TABLE `prov` (
-  `id_p` int(11) NOT NULL,
-  `pro` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `prov`
---
-
-INSERT INTO `prov` (`id_p`, `pro`) VALUES
-(11, 'ACEH'),
-(12, 'SUMATERA UTARA'),
-(13, 'SUMATERA BARAT'),
-(14, 'RIAU'),
-(15, 'JAMBI'),
-(16, 'SUMATERA SELATAN'),
-(17, 'BENGKULU'),
-(18, 'LAMPUNG'),
-(19, 'KEPULAUAN BANGKA BELITUNG'),
-(21, 'KEPULAUAN RIAU'),
-(31, 'DKI JAKARTA'),
-(32, 'JAWA BARAT'),
-(33, 'JAWA TENGAH'),
-(34, 'DI YOGYAKARTA'),
-(35, 'JAWA TIMUR'),
-(36, 'BANTEN'),
-(51, 'BALI'),
-(52, 'NUSA TENGGARA BARAT'),
-(53, 'NUSA TENGGARA TIMUR'),
-(61, 'KALIMANTAN BARAT'),
-(62, 'KALIMANTAN TENGAH'),
-(63, 'KALIMANTAN SELATAN'),
-(64, 'KALIMANTAN TIMUR'),
-(65, 'KALIMANTAN UTARA'),
-(71, 'SULAWESI UTARA'),
-(72, 'SULAWESI TENGAH'),
-(73, 'SULAWESI SELATAN'),
-(74, 'SULAWESI TENGGARA'),
-(75, 'GORONTALO'),
-(76, 'SULAWESI BARAT'),
-(81, 'MALUKU'),
-(82, 'MALUKU UTARA'),
-(91, 'PAPUA BARAT'),
-(94, 'PAPUA');
 
 -- --------------------------------------------------------
 
@@ -219,8 +170,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id_user`, `nik`, `nama_u`, `ttl`, `jekel`, `no_hp`, `ktp`, `email`, `password`) VALUES
-(1, '221212', 'sapu', '', '', '', '', '12saputra21@gmail.com', 'aa'),
-(2, '201653103', 'Budi', 'Kudus Gebog', 'Laki-Laki', '0853729854663', '6058239553_31aabce05e_b.jpg', 'a@gmail.com', 'a');
+(2, '201653103', 'Budi', 'Kudus Gebog', 'Laki-Laki', '0853729854663', '6058239553_31aabce05e_b.jpg', 'a@gmail.com', 'a'),
+(3, '11', 'puta', 'aaaaaaaa', 'Laki-Laki', '1111', '2.png', 'a@a.com', 'a'),
+(4, '123123', 'saasda', '', 'Laki-Laki', '1231', '', '1@ada.com', '1');
 
 --
 -- Indexes for dumped tables
@@ -286,13 +238,13 @@ ALTER TABLE `event`
 -- AUTO_INCREMENT for table `lamaran`
 --
 ALTER TABLE `lamaran`
-  MODIFY `id_lamaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id_lamaran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `loker`
 --
 ALTER TABLE `loker`
-  MODIFY `id_loker` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_loker` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `perusahaan`
@@ -304,7 +256,7 @@ ALTER TABLE `perusahaan`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
