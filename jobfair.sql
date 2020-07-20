@@ -76,7 +76,7 @@ CREATE TABLE `lamaran` (
   `id_loker` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
   `cv` varchar(100) NOT NULL,
-  `ktp` varchar(100) NOT NULL,
+  `lamaran` varchar(100) NOT NULL,
   `ijazah` varchar(100) NOT NULL,
   `sertifikat` varchar(100) NOT NULL,
   `hasil` varchar(10) NOT NULL
