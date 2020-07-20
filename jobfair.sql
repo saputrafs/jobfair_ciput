@@ -86,7 +86,7 @@ CREATE TABLE `lamaran` (
 -- Dumping data for table `lamaran`
 --
 
-INSERT INTO `lamaran` (`id_lamaran`, `id_loker`, `id_user`, `cv`, `ktp`, `ijazah`, `sertifikat`, `hasil`) VALUES
+INSERT INTO `lamaran` (`id_lamaran`, `id_loker`, `id_user`, `cv`, `lamaran`, `ijazah`, `sertifikat`, `hasil`) VALUES
 (15, 17, 2, '580b585b2edbce24c47b2481.png', '1008465_132060743666119_1583397240_o.jpg', '76321.jpg', '_1_.jpg', 'tolak'),
 (16, 17, 3, '84-847632_wheat-vector-black-and-white-wheat-stalk-clipart.png.jpg', '6058239553_31aabce05e_b.jpg', '100.PNG', '76321.jpg', '');
 
