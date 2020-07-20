@@ -110,7 +110,7 @@
       <?php
       $no = 0;
       $date = date("Y-m-d");
-      $event = mysqli_query($koneksi, "SELECT * FROM event");
+      $event = mysqli_query($koneksi, "SELECT * FROM event ORDER BY id_event DESC");
       while ($ev = mysqli_fetch_array($event)) {
         $no++;
       ?>

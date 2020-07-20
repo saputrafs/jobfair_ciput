@@ -29,8 +29,8 @@
                                         </div>
                                         <div class="custom-file">  
                                         <input type="file" class="custom-file-input" id="inputGroupFile02"
-                                                aria-describedby="inputGroupFileAddon02" name="ktp" required >
-                                            <label class="custom-file-label" for="inputGroupFile02">Upload KTP</label>
+                                                aria-describedby="inputGroupFileAddon02" name="lamaran" required >
+                                            <label class="custom-file-label" for="inputGroupFile02">Upload Lamaran</label>
                                         </div>
                                 </div>
                                 </div>

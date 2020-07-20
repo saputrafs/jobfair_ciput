@@ -102,7 +102,7 @@
         <th>Nama</th>
         <th>Loker</th>
         <th>No HP</th>
-        <th>KTP</th>
+        <th>Lamaran</th>
         <th>CV</th>
         <th>Ijazah</th>
         <th>Sertifikat</th>
@@ -121,8 +121,7 @@
           <td><?= $pel['nama_u'] ?></td>
           <td><?= $pel['nama_pekerjaan'] ?></td>
           <td><?= $pel['no_hp'] ?></td>
-          <td><a target="_blank" href="../lamaran/<?= $pel['ktp'] ?>"><img src="../lamaran/<?= $pel['ktp'] ?>" width="50px" height="30px" /></a>
-          </td>
+          <td><a href="download.php?filename=<?= $pel['lamaran'] ?>" class="btn btn-default"><i class="fa fa-envelope"></i>Berkas</a></td>
           <td><a href="download.php?filename=<?= $pel['cv'] ?>" class="btn btn-default"><i class="fa fa-envelope"></i>Berkas</a></td>
           <td><a href="download.php?filename=<?= $pel['ijazah'] ?>" class="btn btn-default"><i class="fa fa-envelope"></i>Berkas</a></td>
           <td><a href="download.php?filename=<?= $pel['sertifikat'] ?>" class="btn btn-default"><i class="fa fa-envelope"></i>Berkas</a></td>

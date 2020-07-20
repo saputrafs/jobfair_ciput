@@ -12,4 +12,3 @@ if ($_POST['submit']) {
   mysqli_query($koneksi, "INSERT INTO loker(id_perusahaan,id_event,nama_pekerjaan,jenis,persyaratan,tgl_buka,tgl_tutup,kouta)
   VALUES('$id','$iv','$nama','$jenis','$persyaratan','$tgl_buka','$tgl_tutup','$kouta')");
   header("Location:index.php?page=loker");
-}
