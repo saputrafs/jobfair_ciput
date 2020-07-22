@@ -10,7 +10,7 @@
         <label for="exampleInputEmail1">Pada Event</label>
         <select name="id_event" class="form-control">
           <?php
-          $event = mysqli_query($koneksi, "SELECT * FROM event WHERE active='1'");
+          $event = mysqli_query($koneksi, "SELECT * FROM event WHERE active='1' ORDER BY id_event DESC");
           while ($eve = mysqli_fetch_array($event)) {
           ?>
             <option value="<?= $eve['id_event'] ?>"><?= $eve['nama_event'] ?></option>
